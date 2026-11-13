@@ -12,7 +12,7 @@ python3 -m http.server 8000
 
 ## Themes
 
-The site currently ships with eight looks so one can be chosen. The dock at the bottom of the page switches between them (the left and right arrow keys work too), and `?skin=<name>` opens a specific one.
+The site currently ships with nine looks so one can be chosen. The dock at the bottom of the page switches between them (the left and right arrow keys work too), and `?skin=<name>` opens a specific one.
 
 | Name | Look |
 | --- | --- |
@@ -24,6 +24,7 @@ The site currently ships with eight looks so one can be chosen. The dock at the 
 | `editorial` | Serif type, set like a magazine |
 | `source` | Code editor colours and monospace |
 | `classic` | The 1984 desktop, in black and white |
+| `source-bento` | Source's editor colours and monospace in Bento's widget grid |
 
 ## Files
 

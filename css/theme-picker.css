@@ -74,6 +74,6 @@
   .footer-inner { padding-bottom: calc(9rem + env(safe-area-inset-bottom, 0px)); }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   .dock-step { display: none; }
 }

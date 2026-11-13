@@ -11,10 +11,12 @@
     { id: 'bento', name: 'Bento', desc: 'Bright widget tiles in a tight grid', a: '#ffd60a', b: '#0a84ff' },
     { id: 'editorial', name: 'Editorial', desc: 'Serif type, set like a magazine', a: '#fbfbfd', b: '#d70015' },
     { id: 'source', name: 'Source', desc: 'Code editor colours and monospace', a: '#1f1f24', b: '#fc5fa3' },
-    { id: 'classic', name: 'Classic', desc: 'The 1984 desktop, in black and white', a: '#ffffff', b: '#000000' }
+    { id: 'classic', name: 'Classic', desc: 'The 1984 desktop, in black and white', a: '#ffffff', b: '#000000' },
+    { id: 'source-bento', name: 'Source + Bento', desc: 'Editor colours in a widget grid', a: '#5dd8ff', b: '#fc5fa3' }
   ];
 
-  var KEY = 'site-skin';
+  var KEY = 'site-skin-2';
+  var FIRST = 'source-bento';
   var root = document.documentElement;
   var nameEl = document.getElementById('dock-name');
   var descEl = document.getElementById('dock-desc');
@@ -82,7 +84,7 @@
   // ?skin=name picks a theme by link; otherwise use the last one viewed.
   var wanted = null;
   try { wanted = new URLSearchParams(location.search).get('skin'); } catch (e) { /* ignore */ }
-  wanted = wanted || saved();
+  wanted = wanted || saved() || FIRST;
   var start = 0;
   THEMES.forEach(function (t, i) { if (t.id === wanted) start = i; });
   current = start;
