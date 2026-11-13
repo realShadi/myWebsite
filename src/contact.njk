@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+permalink: contact.html
+section: contact
+title: Contact
+description: How to reach Shadi Shamasneh.
+---
+<section class="section" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="tile shout fill-kw">
+      <h1 id="contact-title">Say hello.</h1>
+      <p>Work, a question about something I wrote, or a bug on this site. I read everything and usually reply within a couple of days.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="contact-ways">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="mark" id="contact-ways">Ways to reach me</h2>
+    </header>
+    <div class="grid">
+      <div class="tile way span-{% if site.email %}3{% else %}4{% endif %}">
+        <p class="widget-label">GitHub</p>
+        <a href="{{ site.github }}" rel="me noopener">@{{ site.githubHandle }}</a>
+        <p>Best for anything about code. Open an issue or mention me.</p>
+      </div>
+      {%- if site.email %}
+      <div class="tile way span-3">
+        <p class="widget-label">Email</p>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <p>Best for work and longer conversations.</p>
+      </div>
+      {%- endif %}
+      <div class="tile widget span-{% if site.email %}3{% else %}2{% endif %} half">
+        <p class="widget-label">My time right now</p>
+        <p class="widget-value is-large num"><time data-clock>--:--</time></p>
+      </div>
+      <div class="tile widget span-{% if site.email %}3{% else %}2{% endif %} half fill-ok">
+        <p class="widget-label">Status</p>
+        <p class="widget-value"><span class="str">{{ site.status }}</span></p>
+      </div>
+      <div class="tile span-4">
+        <p class="widget-label">A good first message says</p>
+        <ul class="plain-list">
+          <li>what you're building, in a sentence or two</li>
+          <li>where you think I can help</li>
+          <li>your timeline, even a rough one</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

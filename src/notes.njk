@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+permalink: notes.html
+section: notes
+title: Notes
+description: Short notes and tips by Shadi Shamasneh.
+---
+{% from "partials/macros.njk" import windowBar %}
+<div class="wrap wrap-narrow stack">
+  <header class="window article-head">
+    {{ windowBar("~/notes") }}
+    <div class="window-body">
+      <h1 class="display-2">Notes</h1>
+      <p class="lede comment">Small things I learned and want to find again. {{ collections.notes | length }} so far.</p>
+    </div>
+  </header>
+  {%- for note in collections.notes %}
+  <article class="tile note" id="{{ note.fileSlug }}">
+    <header class="note-head">
+      <p class="post-meta"><time datetime="{{ note.date | isoDate }}">{{ note.date | readableDate }}</time><span>#{{ note.data.topic }}</span></p>
+      <h2><a href="#{{ note.fileSlug }}">{{ note.data.title }}</a></h2>
+    </header>
+    <div class="prose">
+{{ note.content | safe }}
+    </div>
+  </article>
+  {%- endfor %}
+</div>

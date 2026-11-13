@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+section: work
+---
+{% from "partials/macros.njk" import windowBar %}
+{% set previous = collections.projects | getPreviousCollectionItem %}
+{% set next = collections.projects | getNextCollectionItem %}
+<article class="wrap stack">
+  <header class="window article-head">
+    {{ windowBar("~/work/" + page.fileSlug + ".swift") }}
+    <div class="window-body">
+      <h1 class="display-2 struct">{{ title }}</h1>
+      <p class="lede">{{ summary }}</p>
+    </div>
+  </header>
+  <p class="notice">Sample project. It shows how a case study looks here until a real one replaces it.</p>
+  <dl class="grid">
+    <div class="tile widget span-2 half">
+      <dt class="widget-label">Kind</dt>
+      <dd class="widget-value">{{ kind }}</dd>
+    </div>
+    <div class="tile widget span-2 half">
+      <dt class="widget-label">Year</dt>
+      <dd class="widget-value num">{{ year }}</dd>
+    </div>
+    <div class="tile widget span-2{% if fill %} fill-{{ fill }}{% endif %}">
+      <dt class="widget-label">Built with</dt>
+      <dd class="widget-value">{{ stack | join(", ") }}</dd>
+    </div>
+  </dl>
+  <div class="tile prose">
+{{ content | safe }}
+  </div>
+  <nav class="grid post-nav" aria-label="More projects">
+    {%- if previous %}
+    <div class="tile span-3">
+      <p class="widget-label">Previous</p>
+      <h3 class="struct"><a class="stretch" href="{{ root }}{{ previous.url | path }}">{{ previous.data.title }}</a></h3>
+    </div>
+    {%- endif %}
+    {%- if next %}
+    <div class="tile span-3">
+      <p class="widget-label">Next</p>
+      <h3 class="struct"><a class="stretch" href="{{ root }}{{ next.url | path }}">{{ next.data.title }}</a></h3>
+    </div>
+    {%- endif %}
+    <div class="tile span-{% if previous and next %}6{% else %}3{% endif %}">
+      <p class="widget-label">Index</p>
+      <h3><a class="stretch" href="{{ root }}projects/index.html">All work</a></h3>
+    </div>
+  </nav>
+</article>

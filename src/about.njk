@@ -1,0 +1,97 @@
+---
+layout: layouts/base.njk
+permalink: about.html
+section: about
+title: About
+description: About Shadi Shamasneh, a developer in Jerusalem.
+---
+{% from "partials/macros.njk" import pageHead %}
+{{ pageHead("~/about.md", "About me", "I'm Shadi, a developer in " + site.location + ". I like software that feels obvious the first time you use it.") }}
+
+<section class="section" aria-labelledby="about-facts">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="mark" id="about-facts">The short version</h2>
+    </header>
+    <div class="grid">
+      <div class="tile span-3">
+        <h3>I build small, fast things for the web.</h3>
+        <p>That usually means fewer features, lighter pages and a lot of small decisions nobody notices. I work across design and code, and I care most about the part where the two meet: spacing, type, loading states, the words on a button.</p>
+        <p>This site is where I keep the work, the writing and a few experiments.</p>
+      </div>
+      <dl class="grid span-3">
+        <div class="tile widget span-6">
+          <dt class="widget-label">Based in</dt>
+          <dd class="widget-value is-large"><span class="str">{{ site.location }}</span></dd>
+        </div>
+        <div class="tile widget span-3 half">
+          <dt class="widget-label">Local time</dt>
+          <dd class="widget-value is-large num"><time data-clock>--:--</time></dd>
+        </div>
+        <div class="tile widget span-3 half fill-ok">
+          <dt class="widget-label">Status</dt>
+          <dd class="widget-value"><span class="str">{{ site.status }}</span></dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="about-how">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="mark" id="about-how">How I work</h2>
+    </header>
+    <div class="grid">
+      <div class="tile span-2 fill-type">
+        <h3>Content first</h3>
+        <p>I start from the real words and data, not from boxes. A layout built around placeholder text usually breaks the day the real text arrives.</p>
+      </div>
+      <div class="tile span-2 fill-kw">
+        <h3>Less, but finished</h3>
+        <p>I would rather ship three things that work everywhere than ten that work on my laptop. Cutting scope is a design tool.</p>
+      </div>
+      <div class="tile span-2 fill-fn">
+        <h3>Speed is a feature</h3>
+        <p>People notice a slow page before they notice anything else about it. I set a size budget early and keep to it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="about-more">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="mark" id="about-more">Details</h2>
+    </header>
+    <div class="grid">
+      <div class="tile span-3">
+        <p class="widget-label">Toolbox</p>
+        <ul class="chips">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Git</li>
+          <li>Accessibility</li>
+          <li>Performance</li>
+        </ul>
+      </div>
+      <div class="tile widget span-3">
+        <p class="widget-label">On GitHub since</p>
+        <p class="widget-value num">{{ site.githubSince }}</p>
+      </div>
+      <div class="tile span-2">
+        <p class="widget-label">What I'm doing</p>
+        <h3><a class="stretch" href="now.html">Now</a></h3>
+      </div>
+      <div class="tile span-2">
+        <p class="widget-label">How this site is made</p>
+        <h3><a class="stretch" href="colophon.html">Colophon</a></h3>
+      </div>
+      <div class="tile span-2">
+        <p class="widget-label">Reach me</p>
+        <h3><a class="stretch" href="contact.html">Contact</a></h3>
+      </div>
+    </div>
+  </div>
+</section>

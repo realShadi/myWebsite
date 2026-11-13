@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+permalink: 404.html
+title: Page not found
+---
+{% from "partials/macros.njk" import windowBar %}
+<section class="page-head">
+  <div class="wrap">
+    <div class="window">
+      {{ windowBar("~/404") }}
+      <div class="window-body">
+        <h1 class="display-2">Nothing at this address</h1>
+        <p class="lede error-line">no such file or directory</p>
+        <p class="lede">The page may have moved, or the link was wrong from the start. These still work:</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="{{ root }}index.html">Go home</a>
+          <a class="btn btn-quiet" href="{{ root }}blog/index.html">Read the blog</a>
+          <button class="btn btn-quiet" type="button" data-random-page>Open a random page</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

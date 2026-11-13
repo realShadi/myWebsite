@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Reference",
+    "items": [
+      { "name": "MDN Web Docs", "url": "https://developer.mozilla.org/", "note": "The first place I check for any HTML, CSS or JavaScript question." },
+      { "name": "Can I use", "url": "https://caniuse.com/", "note": "Browser support tables, before I get excited about a new feature." },
+      { "name": "web.dev", "url": "https://web.dev/", "note": "Clear guides on performance and modern platform features." },
+      { "name": "Pro Git", "url": "https://git-scm.com/book", "note": "The free book that finally made Git make sense." }
+    ]
+  },
+  {
+    "title": "Reading",
+    "items": [
+      { "name": "CSS-Tricks", "url": "https://css-tricks.com/", "note": "Years of practical CSS articles and a great almanac." },
+      { "name": "Smashing Magazine", "url": "https://www.smashingmagazine.com/", "note": "Long, careful articles on front-end and design." },
+      { "name": "A List Apart", "url": "https://alistapart.com/", "note": "Where a lot of how we build for the web was first written down." },
+      { "name": "Web Almanac", "url": "https://almanac.httparchive.org/", "note": "A yearly report on how the web is actually built." }
+    ]
+  },
+  {
+    "title": "Design and type",
+    "items": [
+      { "name": "Human Interface Guidelines", "url": "https://developer.apple.com/design/human-interface-guidelines/", "note": "Worth reading even if you never ship a native app." },
+      { "name": "Practical Typography", "url": "https://practicaltypography.com/", "note": "A whole book on type, free to read online." },
+      { "name": "Every Layout", "url": "https://every-layout.dev/", "note": "Layout patterns that adapt without a pile of breakpoints." },
+      { "name": "Inter", "url": "https://rsms.me/inter/", "note": "The typeface this site uses for long text where the system font isn't available." }
+    ]
+  },
+  {
+    "title": "Tools and habits",
+    "items": [
+      { "name": "Eleventy", "url": "https://www.11ty.dev/", "note": "The static site generator that builds this site." },
+      { "name": "WebAIM Contrast Checker", "url": "https://webaim.org/resources/contrastchecker/", "note": "Two colours in, a pass or fail out." },
+      { "name": "The A11Y Project", "url": "https://www.a11yproject.com/", "note": "A friendly checklist for accessible pages." },
+      { "name": "The /now page movement", "url": "https://nownownow.com/about", "note": "Why this site has a page about what I'm doing now." }
+    ]
+  }
+]

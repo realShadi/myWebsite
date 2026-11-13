@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+permalink: links.html
+title: Links
+description: Websites and tools Shadi Shamasneh keeps coming back to.
+---
+{% from "partials/macros.njk" import pageHead %}
+{{ pageHead("~/links", "Links", "Sites and tools I keep coming back to. A starter list that will grow.") }}
+
+<section class="section" aria-labelledby="links-list">
+  <div class="wrap">
+    <h2 class="visually-hidden" id="links-list">Bookmarks</h2>
+    <div class="grid">
+      {%- for group in links %}
+      <div class="tile span-3">
+        <h3 class="mark">{{ group.title }}</h3>
+        <ul class="link-list">
+          {%- for link in group.items %}
+          <li><a href="{{ link.url }}" rel="noopener">{{ link.name }}</a><span>{{ link.note }}</span></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

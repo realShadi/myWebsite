@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+permalink: projects/index.html
+section: work
+title: Work
+description: Projects by Shadi Shamasneh.
+---
+{% from "partials/macros.njk" import pageHead, projectTile %}
+{{ pageHead("~/work", "Work", "Things I have built. Each one has a short write-up of what it is and what I would do differently.") }}
+
+<section class="section" aria-labelledby="work-list">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="mark" id="work-list">Projects</h2>
+      <p class="section-note">sample projects for now</p>
+    </header>
+    <ul class="grid">
+      {%- set spans = [4, 2, 2, 4] %}
+      {%- for project in collections.projects %}
+      {{ projectTile(project, root, spans[loop.index0 % 4]) }}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-label="Contact">
+  <div class="wrap">
+    <div class="tile">
+      <p class="widget-label">Working together</p>
+      <h3><a class="stretch" href="{{ root }}contact.html">Have something in mind?</a></h3>
+      <p>I'm {{ site.status | lower }}. Tell me what you're building.</p>
+    </div>
+  </div>
+</section>
