@@ -1,0 +1,39 @@
+---
+layout: layouts/base.njk
+section: blog
+---
+{% from "partials/macros.njk" import windowBar %}
+{% set newer = collections.posts | getPreviousCollectionItem %}
+{% set older = collections.posts | getNextCollectionItem %}
+<article class="wrap wrap-narrow stack">
+  <header class="window article-head">
+    {{ windowBar("~/blog/" + page.fileSlug + ".md") }}
+    <div class="window-body">
+      <p class="post-meta"><time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time><span>{{ content | readingTime }}</span></p>
+      <h1 class="display-2">{{ title }}</h1>
+      <p class="lede">{{ summary }}</p>
+      <p class="tags">{% for topic in topics %}<span>#{{ topic }}</span>{% endfor %}</p>
+    </div>
+  </header>
+  <div class="tile prose">
+{{ content | safe }}
+  </div>
+  <nav class="grid post-nav" aria-label="More posts">
+    {%- if older %}
+    <div class="tile span-3">
+      <p class="widget-label">Older</p>
+      <h3><a class="stretch" href="{{ root }}{{ older.url | path }}">{{ older.data.title }}</a></h3>
+    </div>
+    {%- endif %}
+    {%- if newer %}
+    <div class="tile span-3">
+      <p class="widget-label">Newer</p>
+      <h3><a class="stretch" href="{{ root }}{{ newer.url | path }}">{{ newer.data.title }}</a></h3>
+    </div>
+    {%- endif %}
+    <div class="tile span-{% if older and newer %}6{% else %}3{% endif %}">
+      <p class="widget-label">Index</p>
+      <h3><a class="stretch" href="{{ root }}blog/index.html">All posts</a></h3>
+    </div>
+  </nav>
+</article>

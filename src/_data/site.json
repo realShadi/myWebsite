@@ -1,0 +1,49 @@
+{
+  "name": "Shadi Shamasneh",
+  "shortName": "Shadi",
+  "tagline": "Developer in Jerusalem. I build small, fast software for the web and sweat the details.",
+  "description": "Shadi Shamasneh is a developer in Jerusalem. Projects, a blog, short notes and a few toys.",
+  "location": "Jerusalem",
+  "timezone": "Asia/Jerusalem",
+  "status": "Open to work",
+  "githubSince": 2019,
+  "github": "https://github.com/realShadi",
+  "githubHandle": "realShadi",
+  "email": "",
+  "nav": [
+    { "key": "home", "label": "home", "url": "index.html" },
+    { "key": "work", "label": "work", "url": "projects/index.html" },
+    { "key": "blog", "label": "blog", "url": "blog/index.html" },
+    { "key": "notes", "label": "notes", "url": "notes.html" },
+    { "key": "lab", "label": "lab", "url": "lab.html" },
+    { "key": "about", "label": "about", "url": "about.html" },
+    { "key": "contact", "label": "contact", "url": "contact.html" }
+  ],
+  "footer": [
+    {
+      "title": "site",
+      "links": [
+        { "label": "Home", "url": "index.html" },
+        { "label": "Work", "url": "projects/index.html" },
+        { "label": "Blog", "url": "blog/index.html" },
+        { "label": "Notes", "url": "notes.html" }
+      ]
+    },
+    {
+      "title": "random things",
+      "links": [
+        { "label": "Lab", "url": "lab.html" },
+        { "label": "Now", "url": "now.html" },
+        { "label": "Links", "url": "links.html" },
+        { "label": "Colophon", "url": "colophon.html" }
+      ]
+    },
+    {
+      "title": "me",
+      "links": [
+        { "label": "About", "url": "about.html" },
+        { "label": "Contact", "url": "contact.html" }
+      ]
+    }
+  ]
+}

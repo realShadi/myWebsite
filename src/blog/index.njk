@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+permalink: blog/index.html
+section: blog
+title: Blog
+description: Posts about building for the web by Shadi Shamasneh.
+---
+{% from "partials/macros.njk" import pageHead, postTile %}
+{{ pageHead("~/blog", "Blog", "Longer posts about building for the web: CSS, performance, and the small decisions in between.") }}
+
+<section class="section" aria-labelledby="blog-posts">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="mark" id="blog-posts">Posts</h2>
+      <p class="section-note">{{ collections.posts | length }} posts, newest first</p>
+    </header>
+    <ul class="grid">
+      {%- for post in collections.posts %}
+      {{ postTile(post, root, 4 if loop.first else (2 if loop.index == 2 else 3)) }}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-label="Notes">
+  <div class="wrap">
+    <div class="tile">
+      <p class="widget-label">Shorter things</p>
+      <h3><a class="stretch" href="{{ root }}notes.html">Notes: one tip at a time</a></h3>
+      <p>Things too small for a post. A line of CSS, a Git flag, a browser feature worth knowing.</p>
+    </div>
+  </div>
+</section>

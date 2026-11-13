@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+---
+{% from "partials/macros.njk" import windowBar %}
+<article class="wrap wrap-narrow stack">
+  <header class="window article-head">
+    {{ windowBar(windowPath) }}
+    <div class="window-body">
+      <h1 class="display-2">{{ title }}</h1>
+      {%- if summary %}
+      <p class="lede comment">{{ summary }}</p>
+      {%- endif %}
+    </div>
+  </header>
+  <div class="tile prose">
+{{ content | safe }}
+  </div>
+</article>

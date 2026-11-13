@@ -1,0 +1,97 @@
+---
+layout: layouts/base.njk
+permalink: index.html
+section: home
+---
+{% from "partials/macros.njk" import windowBar, projectTile, postTile, icon %}
+<section class="hero">
+  <div class="wrap">
+    <div class="window hero-window">
+      {{ windowBar("shadi.swift") }}
+      <div class="window-body">
+        <h1 class="display caret">{{ site.name }}</h1>
+        <p class="lede comment">{{ site.tagline }}</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="projects/index.html">See my work</a>
+          <a class="btn btn-quiet" href="blog/index.html">Read the blog</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="home-work">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="mark" id="home-work">Work</h2>
+      <p class="section-note"><a href="projects/index.html">all work</a></p>
+    </header>
+    <ul class="grid">
+      {%- set spans = [4, 2, 2, 4] %}
+      {%- for project in collections.projects | limit(4) %}
+      {{ projectTile(project, root, spans[loop.index0]) }}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="home-writing">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="mark" id="home-writing">Writing</h2>
+      <p class="section-note"><a href="blog/index.html">all {{ collections.posts | length }} posts</a></p>
+    </header>
+    <ul class="grid">
+      {%- for post in collections.posts | limit(3) %}
+      {{ postTile(post, root, 2) }}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="home-around">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="mark" id="home-around">Around here</h2>
+    </header>
+    <div class="grid">
+      <div class="tile widget span-2 half">
+        <p class="widget-label">Local time</p>
+        <p class="widget-value is-large num"><time data-clock>--:--</time></p>
+      </div>
+      <div class="tile widget span-2 half fill-ok">
+        <p class="widget-label">Status</p>
+        <p class="widget-value"><span class="str">{{ site.status }}</span></p>
+      </div>
+      <div class="tile span-2">
+        <p class="widget-label">Now</p>
+        <h3><a class="stretch" href="now.html">Building this site, one page at a time</a></h3>
+        <p class="tile-meta"><span>what I'm up to this month</span></p>
+      </div>
+      {%- set note = collections.notes | first %}
+      <div class="tile span-3">
+        <p class="widget-label">Latest note</p>
+        <h3><a class="stretch" href="notes.html#{{ note.fileSlug }}">{{ note.data.title }}</a></h3>
+        <p class="tile-meta"><span>{{ collections.notes | length }} short notes so far</span></p>
+      </div>
+      <div class="tile project-tile span-3 fill-fn">
+        <p class="widget-label">Lab</p>
+        <h3><a class="stretch" href="lab.html">Six small toys that do nothing useful</a></h3>
+        <p class="tile-meta"><span>dice, pixels, bad commit messages</span></p>
+        <span class="tile-icon" aria-hidden="true">{{ icon("dice") }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="home-contact">
+  <div class="wrap">
+    <div class="tile shout fill-kw">
+      <h2 id="home-contact">Say hello.</h2>
+      <p>I read everything. The contact page lists the quickest ways to reach me.</p>
+      <div class="actions">
+        <a class="btn btn-dark" href="contact.html">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>

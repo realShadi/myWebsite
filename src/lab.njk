@@ -1,0 +1,90 @@
+---
+layout: layouts/base.njk
+permalink: lab.html
+section: lab
+title: Lab
+description: Small toys and random things by Shadi Shamasneh.
+scripts:
+  - lab.js
+---
+{% from "partials/macros.njk" import pageHead %}
+{{ pageHead("~/lab", "Lab", "Random things. Six small toys that do nothing useful and were fun to make.") }}
+
+<section class="section" aria-labelledby="lab-toys">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="mark" id="lab-toys">Toys</h2>
+      <p class="section-note">everything runs in your browser</p>
+    </header>
+    <div class="grid">
+
+      <div class="tile toy span-4" data-toy="commit">
+        <p class="widget-label">Commit message generator</p>
+        <h3 class="visually-hidden">Commit message generator</h3>
+        <p class="toy-out" data-out aria-live="polite">fix: stop the footer from eating the last paragraph</p>
+        <div class="toy-actions">
+          <button class="btn btn-primary btn-small" type="button" data-go>Write another</button>
+          <button class="btn btn-quiet btn-small" type="button" data-copy>Copy</button>
+        </div>
+      </div>
+
+      <div class="tile toy span-2 fill-num" data-toy="dice">
+        <p class="widget-label">Dice</p>
+        <h3 class="visually-hidden">Dice</h3>
+        <div class="dice" data-out aria-live="polite"><span class="die">4</span><span class="die">2</span></div>
+        <p class="toy-small" data-total>Total 6</p>
+        <div class="toy-actions">
+          <button class="btn btn-dark btn-small" type="button" data-go>Roll</button>
+          <button class="btn btn-quiet btn-small" type="button" data-more>Add a die</button>
+        </div>
+      </div>
+
+      <div class="tile toy span-2" data-toy="colour">
+        <p class="widget-label">Colour of the moment</p>
+        <h3 class="visually-hidden">Colour of the moment</h3>
+        <div class="colour-chip" data-chip style="background-color: #5dd8ff"></div>
+        <p class="toy-out" data-out aria-live="polite">#5dd8ff</p>
+        <div class="toy-actions">
+          <button class="btn btn-primary btn-small" type="button" data-go>Shuffle</button>
+          <button class="btn btn-quiet btn-small" type="button" data-copy>Copy hex</button>
+        </div>
+      </div>
+
+      <div class="tile toy span-2 fill-type" data-toy="oracle">
+        <p class="widget-label">Should I ship it?</p>
+        <h3 class="visually-hidden">Should I ship it?</h3>
+        <p class="toy-out" data-out aria-live="polite">Ask and find out.</p>
+        <div class="toy-actions">
+          <button class="btn btn-dark btn-small" type="button" data-go>Ask</button>
+        </div>
+      </div>
+
+      <div class="tile toy span-2" data-toy="reaction">
+        <p class="widget-label">Reaction time</p>
+        <h3 class="visually-hidden">Reaction time</h3>
+        <button class="reaction-pad" type="button" data-pad data-state="idle" aria-live="polite">Press to start</button>
+        <p class="toy-small" data-best>No best time yet</p>
+      </div>
+
+      <div class="tile toy span-3" data-toy="pixels">
+        <p class="widget-label">Pixel pad</p>
+        <h3 class="visually-hidden">Pixel pad</h3>
+        <div class="pixel-grid" data-grid role="group" aria-label="12 by 12 pixel grid"></div>
+        <div class="toy-actions">
+          <button class="btn btn-primary btn-small" type="button" data-go>Scatter</button>
+          <button class="btn btn-quiet btn-small" type="button" data-clear>Clear</button>
+        </div>
+      </div>
+
+      <div class="tile toy span-3 fill-fn">
+        <p class="widget-label">Lost?</p>
+        <h3>Go somewhere at random</h3>
+        <p>Every page on this site is in a hat. This pulls one out.</p>
+        <div class="toy-actions">
+          <button class="btn btn-dark btn-small" type="button" data-random-page>Open a random page</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      {%- for group in site.footer %}
+      <nav class="footer-col" aria-label="{{ group.title }}">
+        <p class="footer-title">{{ group.title }}</p>
+        <ul>
+          {%- for link in group.links %}
+          <li><a href="{{ root }}{{ link.url }}">{{ link.label }}</a></li>
+          {%- endfor %}
+          {%- if group.title == "me" %}
+          <li><a href="{{ site.github }}" rel="me noopener">GitHub</a></li>
+          {%- endif %}
+        </ul>
+      </nav>
+      {%- endfor %}
+      <div class="footer-col footer-side">
+        <p class="footer-title">{{ site.location | lower }}</p>
+        <p class="footer-clock"><time data-clock>--:--</time></p>
+        <button class="btn btn-quiet btn-small" type="button" data-random-page>Open a random page</button>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p>© {{ build.year }} {{ site.name }}</p>
+      <p>Made in {{ site.location }}</p>
+    </div>
+  </div>
+  <script type="application/json" id="site-pages" data-root="{{ root }}" data-timezone="{{ site.timezone }}">[
+    {%- set comma = joiner(",") -%}
+    {%- for item in collections.all -%}
+      {%- if item.url and item.url != "/404.html" -%}{{ comma() }}"{{ item.url | path }}"{%- endif -%}
+    {%- endfor -%}
+  ]</script>
+</footer>
